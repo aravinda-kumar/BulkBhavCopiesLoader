@@ -1,0 +1,66 @@
+﻿@model IEnumerable<StockScreenerLibrary.Housebreak>
+
+@{
+    ViewBag.Title = "QuickHousebreakReport";
+}
+
+@foreach (var item in Model)
+{
+<h2>
+    Housebreak Report of @Html.DisplayFor(modelItem => item.BreakoutCandleDate) 
+</h2>
+    break;
+}
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ticker.Ticker1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherCandleHigh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherCandleLow)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherCandleDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BreakoutCandleDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfCandles)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ticker.Ticker1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotherCandleHigh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotherCandleLow)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotherCandleDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BreakoutCandleDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfCandles)
+            </td>
+
+        </tr>
+    }
+
+</table>

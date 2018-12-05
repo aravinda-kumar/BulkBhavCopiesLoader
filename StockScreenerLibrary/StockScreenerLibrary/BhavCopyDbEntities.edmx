@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BhavCopiesDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BhavCopies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Ticker" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="O" Type="float" Nullable="false" />
+          <Property Name="H" Type="float" Nullable="false" />
+          <Property Name="L" Type="float" Nullable="false" />
+          <Property Name="C" Type="float" Nullable="false" />
+          <Property Name="Volume" Type="float" Nullable="false" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BhavCopiesDb.dbo.BhavCopyUploadLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BhavCopyUploadLog">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="NumberOfStocksUpdated" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="NumberOfStocksUpdated" Type="int" Nullable="false" />
+          <Property Name="Status" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Housebreaks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MotherCandleHigh" Type="float" Nullable="false" />
+          <Property Name="MotherCandleLow" Type="float" Nullable="false" />
+          <Property Name="MotherCandleDate" Type="datetime" Nullable="false" />
+          <Property Name="BreakoutCandleDate" Type="datetime" />
+          <Property Name="PercentageMoveAfterBreakOut" Type="float" />
+          <Property Name="StopLossHitDate" Type="datetime" />
+          <Property Name="NumberOfCandles" Type="int" Nullable="false" />
+          <Property Name="FK_Ticker_Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tickers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ticker" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__Housebrea__FK_Ti__108B795B">
+          <End Role="Tickers" Type="Self.Tickers" Multiplicity="1" />
+          <End Role="Housebreaks" Type="Self.Housebreaks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tickers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Housebreaks">
+              <PropertyRef Name="FK_Ticker_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BhavCopiesDbModelStoreContainer">
+          <EntitySet Name="BhavCopies" EntityType="Self.BhavCopies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Housebreaks" EntityType="Self.Housebreaks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tickers" EntityType="Self.Tickers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BhavCopyUploadLog" EntityType="Self.BhavCopyUploadLog" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BhavCopyUploadLog].[Id] AS [Id], 
+    [BhavCopyUploadLog].[Date] AS [Date], 
+    [BhavCopyUploadLog].[NumberOfStocksUpdated] AS [NumberOfStocksUpdated], 
+    [BhavCopyUploadLog].[Status] AS [Status]
+    FROM [dbo].[BhavCopyUploadLog] AS [BhavCopyUploadLog]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Housebrea__FK_Ti__108B795B" Association="Self.FK__Housebrea__FK_Ti__108B795B">
+            <End Role="Tickers" EntitySet="Tickers" />
+            <End Role="Housebreaks" EntitySet="Housebreaks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BhavCopiesDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BhavCopy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Ticker" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="O" Type="Double" Nullable="false" />
+          <Property Name="H" Type="Double" Nullable="false" />
+          <Property Name="L" Type="Double" Nullable="false" />
+          <Property Name="C" Type="Double" Nullable="false" />
+          <Property Name="Volume" Type="Double" Nullable="false" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="BhavCopyUploadLog">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="NumberOfStocksUpdated" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NumberOfStocksUpdated" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BhavCopiesDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BhavCopies" EntityType="Self.BhavCopy" />
+          <EntitySet Name="BhavCopyUploadLogs" EntityType="Self.BhavCopyUploadLog" />
+          <EntitySet Name="Housebreaks" EntityType="BhavCopiesDbModel.Housebreak" />
+          <EntitySet Name="Tickers" EntityType="BhavCopiesDbModel.Ticker" />
+          <AssociationSet Name="FK__Housebrea__FK_Ti__108B795B" Association="BhavCopiesDbModel.FK__Housebrea__FK_Ti__108B795B">
+            <End Role="Ticker" EntitySet="Tickers" />
+            <End Role="Housebreak" EntitySet="Housebreaks" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Housebreak">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MotherCandleHigh" Type="Double" Nullable="false" />
+          <Property Name="MotherCandleLow" Type="Double" Nullable="false" />
+          <Property Name="MotherCandleDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BreakoutCandleDate" Type="DateTime" Precision="3" />
+          <Property Name="PercentageMoveAfterBreakOut" Type="Double" />
+          <Property Name="StopLossHitDate" Type="DateTime" Precision="3" />
+          <Property Name="NumberOfCandles" Type="Int32" Nullable="false" />
+          <Property Name="FK_Ticker_Id" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Ticker" Relationship="BhavCopiesDbModel.FK__Housebrea__FK_Ti__108B795B" FromRole="Housebreak" ToRole="Ticker" />
+        </EntityType>
+        <EntityType Name="Ticker">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ticker1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Housebreaks" Relationship="BhavCopiesDbModel.FK__Housebrea__FK_Ti__108B795B" FromRole="Ticker" ToRole="Housebreak" />
+        </EntityType>
+        <Association Name="FK__Housebrea__FK_Ti__108B795B">
+          <End Type="BhavCopiesDbModel.Ticker" Role="Ticker" Multiplicity="1" />
+          <End Type="BhavCopiesDbModel.Housebreak" Role="Housebreak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ticker">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Housebreak">
+              <PropertyRef Name="FK_Ticker_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BhavCopiesDbModelStoreContainer" CdmEntityContainer="BhavCopiesDbEntities">
+          <EntitySetMapping Name="BhavCopies">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.BhavCopy">
+              <MappingFragment StoreEntitySet="BhavCopies">
+                <ScalarProperty Name="Ticker" ColumnName="Ticker" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="O" ColumnName="O" />
+                <ScalarProperty Name="H" ColumnName="H" />
+                <ScalarProperty Name="L" ColumnName="L" />
+                <ScalarProperty Name="C" ColumnName="C" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BhavCopyUploadLogs">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.BhavCopyUploadLog">
+              <MappingFragment StoreEntitySet="BhavCopyUploadLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="NumberOfStocksUpdated" ColumnName="NumberOfStocksUpdated" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Housebreaks">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Housebreak">
+              <MappingFragment StoreEntitySet="Housebreaks">
+                <ScalarProperty Name="FK_Ticker_Id" ColumnName="FK_Ticker_Id" />
+                <ScalarProperty Name="NumberOfCandles" ColumnName="NumberOfCandles" />
+                <ScalarProperty Name="StopLossHitDate" ColumnName="StopLossHitDate" />
+                <ScalarProperty Name="PercentageMoveAfterBreakOut" ColumnName="PercentageMoveAfterBreakOut" />
+                <ScalarProperty Name="BreakoutCandleDate" ColumnName="BreakoutCandleDate" />
+                <ScalarProperty Name="MotherCandleDate" ColumnName="MotherCandleDate" />
+                <ScalarProperty Name="MotherCandleLow" ColumnName="MotherCandleLow" />
+                <ScalarProperty Name="MotherCandleHigh" ColumnName="MotherCandleHigh" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tickers">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Ticker">
+              <MappingFragment StoreEntitySet="Tickers">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Ticker1" ColumnName="Ticker" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

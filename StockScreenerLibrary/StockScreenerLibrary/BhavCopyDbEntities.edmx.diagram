@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bc9af2dda7254892b2609c50997f7b45" Name="Diagram1">
+        <EntityTypeShape EntityType="BhavCopiesDbModel.BhavCopy" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BhavCopiesDbModel.BhavCopyUploadLog" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BhavCopiesDbModel.Housebreak" Width="1.5" PointX="5.625" PointY="4" />
+        <EntityTypeShape EntityType="BhavCopiesDbModel.Ticker" Width="1.5" PointX="3.375" PointY="4.5" />
+        <AssociationConnector Association="BhavCopiesDbModel.FK__Housebrea__FK_Ti__108B795B" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
