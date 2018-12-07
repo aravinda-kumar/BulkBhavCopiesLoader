@@ -78,6 +78,9 @@
     </Compile>
     <Compile Include="HousebreakScanner.cs" />
     <Compile Include="IBhavCopyDBAccessLayer.cs" />
+    <Compile Include="Indicator.cs">
+      <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Nifty_50.cs">
       <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
     </Compile>

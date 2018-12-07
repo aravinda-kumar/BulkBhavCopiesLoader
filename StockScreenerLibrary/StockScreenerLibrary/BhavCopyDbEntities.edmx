@@ -46,129 +46,24 @@ warning 6002: The table/view 'BhavCopiesDb.dbo.BhavCopyUploadLog' does not have 
           <Property Name="NumberOfCandles" Type="int" Nullable="false" />
           <Property Name="FK_Ticker_Id" Type="bigint" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BhavCopiesDb.dbo.ind_close_all_04122018' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ind_close_all_04122018">
-          <Property Name="Index Name" Type="varchar" MaxLength="100" />
-          <Property Name="Description" Type="varchar" MaxLength="100" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_50' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ind_Nifty_50">
-          <Property Name="Company Name" Type="varchar" MaxLength="100" />
-          <Property Name="Industry" Type="varchar" MaxLength="100" />
-          <Property Name="Symbol" Type="varchar" MaxLength="50" />
-          <Property Name="Series" Type="varchar" MaxLength="50" />
-          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Auto' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ind_Nifty_Auto">
-          <Property Name="Company Name" Type="varchar" MaxLength="100" />
-          <Property Name="Industry" Type="varchar" MaxLength="50" />
-          <Property Name="Symbol" Type="varchar" MaxLength="50" />
-          <Property Name="Series" Type="varchar" MaxLength="50" />
-          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Bank' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ind_Nifty_Bank">
-          <Property Name="Company Name" Type="varchar" MaxLength="50" />
-          <Property Name="Industry" Type="varchar" MaxLength="50" />
-          <Property Name="Symbol" Type="varchar" MaxLength="50" />
-          <Property Name="Series" Type="varchar" MaxLength="50" />
-          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Finance' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ind_Nifty_Finance">
-          <Property Name="Company Name" Type="varchar" MaxLength="50" />
-          <Property Name="Industry" Type="varchar" MaxLength="50" />
-          <Property Name="Symbol" Type="varchar" MaxLength="50" />
-          <Property Name="Series" Type="varchar" MaxLength="50" />
-          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Fmcg' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ind_Nifty_Fmcg">
-          <Property Name="Company Name" Type="varchar" MaxLength="50" />
-          <Property Name="Industry" Type="varchar" MaxLength="50" />
-          <Property Name="Symbol" Type="varchar" MaxLength="50" />
-          <Property Name="Series" Type="varchar" MaxLength="50" />
-          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_IT' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ind_Nifty_IT">
-          <Property Name="Company Name" Type="varchar" MaxLength="50" />
-          <Property Name="Industry" Type="varchar" MaxLength="50" />
-          <Property Name="Symbol" Type="varchar" MaxLength="50" />
-          <Property Name="Series" Type="varchar" MaxLength="50" />
-          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Media' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ind_Nifty_Media">
-          <Property Name="Company Name" Type="varchar" MaxLength="50" />
-          <Property Name="Industry" Type="varchar" MaxLength="50" />
-          <Property Name="Symbol" Type="varchar" MaxLength="50" />
-          <Property Name="Series" Type="varchar" MaxLength="50" />
-          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Metal' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ind_Nifty_Metal">
-          <Property Name="Company Name" Type="varchar" MaxLength="50" />
-          <Property Name="Industry" Type="varchar" MaxLength="50" />
-          <Property Name="Symbol" Type="varchar" MaxLength="50" />
-          <Property Name="Series" Type="varchar" MaxLength="50" />
-          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Next_50' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ind_Nifty_Next_50">
-          <Property Name="Company Name" Type="varchar" MaxLength="100" />
-          <Property Name="Industry" Type="varchar" MaxLength="50" />
-          <Property Name="Symbol" Type="varchar" MaxLength="50" />
-          <Property Name="Series" Type="varchar" MaxLength="50" />
-          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Pharma' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ind_Nifty_Pharma">
-          <Property Name="Company Name" Type="varchar" MaxLength="50" />
-          <Property Name="Industry" Type="varchar" MaxLength="50" />
-          <Property Name="Symbol" Type="varchar" MaxLength="50" />
-          <Property Name="Series" Type="varchar" MaxLength="50" />
-          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Private_Bank' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ind_Nifty_Private_Bank">
-          <Property Name="Company Name" Type="varchar" MaxLength="50" />
-          <Property Name="Industry" Type="varchar" MaxLength="50" />
-          <Property Name="Symbol" Type="varchar" MaxLength="50" />
-          <Property Name="Series" Type="varchar" MaxLength="50" />
-          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_PSU_Bank' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ind_Nifty_PSU_Bank">
-          <Property Name="Company Name" Type="varchar" MaxLength="100" />
-          <Property Name="Industry" Type="varchar" MaxLength="50" />
-          <Property Name="Symbol" Type="varchar" MaxLength="50" />
-          <Property Name="Series" Type="varchar" MaxLength="50" />
-          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Realty' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ind_Nifty_Realty">
-          <Property Name="Company Name" Type="varchar" MaxLength="100" />
-          <Property Name="Industry" Type="varchar" MaxLength="50" />
-          <Property Name="Symbol" Type="varchar" MaxLength="50" />
-          <Property Name="Series" Type="varchar" MaxLength="50" />
-          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
-        </EntityType>-->
+        <EntityType Name="Indicators">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Indicator_1" Type="float" />
+          <Property Name="Indicator_2" Type="float" />
+          <Property Name="Indicator_3" Type="float" />
+          <Property Name="Indicator_4" Type="float" />
+          <Property Name="Indicator_5" Type="float" />
+          <Property Name="Indicator_6" Type="float" />
+          <Property Name="Indicator_7" Type="float" />
+          <Property Name="Indicator_8" Type="float" />
+          <Property Name="Indicator_9" Type="float" />
+          <Property Name="Indicator_10" Type="float" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="FK_Ticker_Id" Type="bigint" Nullable="false" />
+        </EntityType>
         <EntityType Name="Nifty_50">
           <Key>
             <PropertyRef Name="Id" />
@@ -320,7 +215,7 @@ warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Realty' does not have a
           <Property Name="Ticker" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="varchar" MaxLength="255" />
         </EntityType>
-        <Association Name="FK__Housebrea__FK_Ti__108B795B">
+        <Association Name="FK__Housebrea__FK_Ti__6A30C649">
           <End Role="Tickers" Type="Self.Tickers" Multiplicity="1" />
           <End Role="Housebreaks" Type="Self.Housebreaks" Multiplicity="*" />
           <ReferentialConstraint>
@@ -332,9 +227,22 @@ warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Realty' does not have a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Indicators_Tickers">
+          <End Role="Tickers" Type="Self.Tickers" Multiplicity="1" />
+          <End Role="Indicators" Type="Self.Indicators" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tickers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Indicators">
+              <PropertyRef Name="FK_Ticker_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="BhavCopiesDbModelStoreContainer">
           <EntitySet Name="BhavCopies" EntityType="Self.BhavCopies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Housebreaks" EntityType="Self.Housebreaks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Indicators" EntityType="Self.Indicators" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nifty_50" EntityType="Self.Nifty_50" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nifty_Auto" EntityType="Self.Nifty_Auto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nifty_Bank" EntityType="Self.Nifty_Bank" Schema="dbo" store:Type="Tables" />
@@ -357,9 +265,13 @@ warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Realty' does not have a
     [BhavCopyUploadLog].[Status] AS [Status]
     FROM [dbo].[BhavCopyUploadLog] AS [BhavCopyUploadLog]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__Housebrea__FK_Ti__108B795B" Association="Self.FK__Housebrea__FK_Ti__108B795B">
+          <AssociationSet Name="FK__Housebrea__FK_Ti__6A30C649" Association="Self.FK__Housebrea__FK_Ti__6A30C649">
             <End Role="Tickers" EntitySet="Tickers" />
             <End Role="Housebreaks" EntitySet="Housebreaks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Indicators_Tickers" Association="Self.FK_Indicators_Tickers">
+            <End Role="Tickers" EntitySet="Tickers" />
+            <End Role="Indicators" EntitySet="Indicators" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -413,6 +325,11 @@ warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Realty' does not have a
           <EntitySet Name="Nifty_Private_Bank" EntityType="BhavCopiesDbModel.Nifty_Private_Bank" />
           <EntitySet Name="Nifty_PSU_Bank" EntityType="BhavCopiesDbModel.Nifty_PSU_Bank" />
           <EntitySet Name="Nifty_Realty" EntityType="BhavCopiesDbModel.Nifty_Realty" />
+          <EntitySet Name="Indicators" EntityType="BhavCopiesDbModel.Indicator" />
+          <AssociationSet Name="FK_Indicators_Tickers" Association="BhavCopiesDbModel.FK_Indicators_Tickers">
+            <End Role="Ticker" EntitySet="Tickers" />
+            <End Role="Indicator" EntitySet="Indicators" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Housebreak">
           <Key>
@@ -437,6 +354,7 @@ warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Realty' does not have a
           <Property Name="Ticker1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Housebreaks" Relationship="BhavCopiesDbModel.FK__Housebrea__FK_Ti__108B795B" FromRole="Ticker" ToRole="Housebreak" />
+          <NavigationProperty Name="Indicators" Relationship="BhavCopiesDbModel.FK_Indicators_Tickers" FromRole="Ticker" ToRole="Indicator" />
         </EntityType>
         <Association Name="FK__Housebrea__FK_Ti__108B795B">
           <End Type="BhavCopiesDbModel.Ticker" Role="Ticker" Multiplicity="1" />
@@ -593,6 +511,37 @@ warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Realty' does not have a
           <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ISIN_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="Indicator">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Indicator_1" Type="Double" Nullable="false" DefaultValue="0" />
+          <Property Name="Indicator_2" Type="Double" Nullable="false" DefaultValue="0" />
+          <Property Name="Indicator_3" Type="Double" Nullable="false" DefaultValue="0" />
+          <Property Name="Indicator_4" Type="Double" DefaultValue="0" Nullable="false" />
+          <Property Name="Indicator_5" Type="Double" DefaultValue="0" Nullable="false" />
+          <Property Name="Indicator_6" Type="Double" DefaultValue="0" Nullable="true" />
+          <Property Name="Indicator_7" Type="Double" DefaultValue="0" Nullable="true" />
+          <Property Name="Indicator_8" Type="Double" DefaultValue="0" Nullable="true" />
+          <Property Name="Indicator_9" Type="Double" DefaultValue="0" Nullable="true" />
+          <Property Name="Indicator_10" Type="Double" DefaultValue="0" Nullable="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FK_Ticker_Id" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Ticker" Relationship="BhavCopiesDbModel.FK_Indicators_Tickers" FromRole="Indicator" ToRole="Ticker" />
+        </EntityType>
+        <Association Name="FK_Indicators_Tickers">
+          <End Type="BhavCopiesDbModel.Ticker" Role="Ticker" Multiplicity="1" />
+          <End Type="BhavCopiesDbModel.Indicator" Role="Indicator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ticker">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Indicator">
+              <PropertyRef Name="FK_Ticker_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -799,6 +748,25 @@ warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Realty' does not have a
                 <ScalarProperty Name="Symbol" ColumnName="Symbol" />
                 <ScalarProperty Name="Industry" ColumnName="Industry" />
                 <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Indicators">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Indicator">
+              <MappingFragment StoreEntitySet="Indicators">
+                <ScalarProperty Name="FK_Ticker_Id" ColumnName="FK_Ticker_Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Indicator_10" ColumnName="Indicator_10" />
+                <ScalarProperty Name="Indicator_9" ColumnName="Indicator_9" />
+                <ScalarProperty Name="Indicator_8" ColumnName="Indicator_8" />
+                <ScalarProperty Name="Indicator_7" ColumnName="Indicator_7" />
+                <ScalarProperty Name="Indicator_6" ColumnName="Indicator_6" />
+                <ScalarProperty Name="Indicator_5" ColumnName="Indicator_5" />
+                <ScalarProperty Name="Indicator_4" ColumnName="Indicator_4" />
+                <ScalarProperty Name="Indicator_3" ColumnName="Indicator_3" />
+                <ScalarProperty Name="Indicator_2" ColumnName="Indicator_2" />
+                <ScalarProperty Name="Indicator_1" ColumnName="Indicator_1" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

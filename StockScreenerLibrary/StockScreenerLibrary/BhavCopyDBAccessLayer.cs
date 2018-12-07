@@ -310,5 +310,26 @@ namespace StockScreenerLibrary
                 return houseBreakList;
             }
         }
+
+        public List<double> GetClosingPrices(string Ticker)
+        {
+            using (var bhavDBContext = new BhavCopiesDbEntities())
+            {
+
+                var closingPrices = (from bc in bhavDBContext.BhavCopies
+                                              orderby bc.Date descending
+                                              select new
+                                              {
+                                                  bc.C
+                                              }).ToList();
+
+                List<double> closingPricesList = new List<double>();
+                foreach(var item in closingPrices)
+                {
+                    closingPricesList.Add(item.C);
+                }
+                return closingPricesList;
+            }
+        }
     }
 }

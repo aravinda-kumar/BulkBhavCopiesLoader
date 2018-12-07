@@ -42,5 +42,6 @@ namespace StockScreenerLibrary
         public virtual DbSet<Nifty_Private_Bank> Nifty_Private_Bank { get; set; }
         public virtual DbSet<Nifty_PSU_Bank> Nifty_PSU_Bank { get; set; }
         public virtual DbSet<Nifty_Realty> Nifty_Realty { get; set; }
+        public virtual DbSet<Indicator> Indicators { get; set; }
     }
 }

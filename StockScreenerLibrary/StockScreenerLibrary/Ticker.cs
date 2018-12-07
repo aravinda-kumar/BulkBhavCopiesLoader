@@ -18,6 +18,7 @@ namespace StockScreenerLibrary
         public Ticker()
         {
             this.Housebreaks = new HashSet<Housebreak>();
+            this.Indicators = new HashSet<Indicator>();
         }
     
         public long Id { get; set; }
@@ -26,5 +27,7 @@ namespace StockScreenerLibrary
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Housebreak> Housebreaks { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Indicator> Indicators { get; set; }
     }
 }

@@ -33,6 +33,26 @@ namespace StockScreenerLibrary
             return AllStocksHouseBreakReport;
         }
 
-        
+        private List<double> GetClosingPrices(List<BhavCopy> bhavCopies)
+        {
+            var closingPricesList = from bc in bhavCopies
+                                select new
+                                {
+                                    bc.C
+                                };
+            List<double> closingPrices = new List<double>();
+            foreach(var item in closingPricesList)
+            {
+                closingPrices.Add(item.C);
+            }
+            return closingPrices;
+        }
+
+        public void PopulateIndicators()
+        {
+            List<BhavCopy> bhavCopies = dbAccessLayer.GetQuotes("Nifty 50");
+            
+
+        }
     }
 }

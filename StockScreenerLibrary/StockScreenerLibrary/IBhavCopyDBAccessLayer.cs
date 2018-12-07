@@ -23,5 +23,7 @@ namespace StockScreenerLibrary
         List<string> GetIndexList();
 
         List<Housebreak> GetQuickHousebreakReportOfIndex(string indexName);
+
+        List<double> GetClosingPrices(string Ticker);
     }
 }

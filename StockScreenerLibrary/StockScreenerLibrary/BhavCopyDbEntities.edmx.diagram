@@ -23,6 +23,8 @@
         <EntityTypeShape EntityType="BhavCopiesDbModel.Nifty_Private_Bank" Width="1.5" PointX="8.75" PointY="9.75" />
         <EntityTypeShape EntityType="BhavCopiesDbModel.Nifty_PSU_Bank" Width="1.5" PointX="0.75" PointY="10.75" />
         <EntityTypeShape EntityType="BhavCopiesDbModel.Nifty_Realty" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="BhavCopiesDbModel.Indicator" Width="1.5" PointX="5.625" PointY="11.625" />
+        <AssociationConnector Association="BhavCopiesDbModel.FK_Indicators_Tickers" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
