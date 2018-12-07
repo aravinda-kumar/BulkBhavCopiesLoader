@@ -12,29 +12,18 @@ namespace StockScreenerLibrary
     using System;
     using System.Collections.Generic;
     
-using System.ComponentModel.DataAnnotations;
-
     public partial class Housebreak
     {
         public long Id { get; set; }
-        [Display(Name = "Mother Candle High")]
         public double MotherCandleHigh { get; set; }
-        [Display(Name = "Mother Candle Low")]
         public double MotherCandleLow { get; set; }
-        [Display(Name = "Mother Candle Date")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public System.DateTime MotherCandleDate { get; set; }
-        [Display(Name = "Breakout Date")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public Nullable<System.DateTime> BreakoutCandleDate { get; set; }
         public Nullable<double> PercentageMoveAfterBreakOut { get; set; }
         public Nullable<System.DateTime> StopLossHitDate { get; set; }
-        [Display(Name = "Number of candles")]
         public int NumberOfCandles { get; set; }
         public long FK_Ticker_Id { get; set; }
-        [Display(Name = "Ticker")]
-
+    
         public virtual Ticker Ticker { get; set; }
-
     }
 }

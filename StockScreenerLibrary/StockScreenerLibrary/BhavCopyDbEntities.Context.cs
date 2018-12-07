@@ -29,5 +29,18 @@ namespace StockScreenerLibrary
         public virtual DbSet<BhavCopyUploadLog> BhavCopyUploadLogs { get; set; }
         public virtual DbSet<Housebreak> Housebreaks { get; set; }
         public virtual DbSet<Ticker> Tickers { get; set; }
+        public virtual DbSet<Nifty_50> Nifty_50 { get; set; }
+        public virtual DbSet<Nifty_Auto> Nifty_Auto { get; set; }
+        public virtual DbSet<Nifty_Bank> Nifty_Bank { get; set; }
+        public virtual DbSet<Nifty_Finance> Nifty_Finance { get; set; }
+        public virtual DbSet<Nifty_Fmcg> Nifty_Fmcg { get; set; }
+        public virtual DbSet<Nifty_IT> Nifty_IT { get; set; }
+        public virtual DbSet<Nifty_Media> Nifty_Media { get; set; }
+        public virtual DbSet<Nifty_Metal> Nifty_Metal { get; set; }
+        public virtual DbSet<Nifty_Next_50> Nifty_Next_50 { get; set; }
+        public virtual DbSet<Nifty_Pharma> Nifty_Pharma { get; set; }
+        public virtual DbSet<Nifty_Private_Bank> Nifty_Private_Bank { get; set; }
+        public virtual DbSet<Nifty_PSU_Bank> Nifty_PSU_Bank { get; set; }
+        public virtual DbSet<Nifty_Realty> Nifty_Realty { get; set; }
     }
 }

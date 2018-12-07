@@ -12,19 +12,13 @@ namespace StockScreenerLibrary
     using System;
     using System.Collections.Generic;
     
-    public partial class Ticker
+    public partial class Nifty_Auto
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Ticker()
-        {
-            this.Housebreaks = new HashSet<Housebreak>();
-        }
-    
         public long Id { get; set; }
-        public string Ticker1 { get; set; }
-        public string Description { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Housebreak> Housebreaks { get; set; }
+        public string Company_Name { get; set; }
+        public string Industry { get; set; }
+        public string Symbol { get; set; }
+        public string Series { get; set; }
+        public string ISIN_Code { get; set; }
     }
 }

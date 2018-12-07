@@ -19,5 +19,9 @@ namespace StockScreenerLibrary
 
         void PopulateHousebreaks(Ticker ticker, List<HouseBreakReport> housebreakReport);
         List<Housebreak> GetQuickHousebreakReport(DateTime breakOutDate);
+
+        List<string> GetIndexList();
+
+        List<Housebreak> GetQuickHousebreakReportOfIndex(string indexName);
     }
 }

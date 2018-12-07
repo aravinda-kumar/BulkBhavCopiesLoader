@@ -78,6 +78,45 @@
     </Compile>
     <Compile Include="HousebreakScanner.cs" />
     <Compile Include="IBhavCopyDBAccessLayer.cs" />
+    <Compile Include="Nifty_50.cs">
+      <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nifty_Auto.cs">
+      <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nifty_Bank.cs">
+      <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nifty_Finance.cs">
+      <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nifty_Fmcg.cs">
+      <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nifty_IT.cs">
+      <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nifty_Media.cs">
+      <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nifty_Metal.cs">
+      <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nifty_Next_50.cs">
+      <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nifty_Pharma.cs">
+      <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nifty_Private_Bank.cs">
+      <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nifty_PSU_Bank.cs">
+      <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nifty_Realty.cs">
+      <DependentUpon>BhavCopyDbEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="StockScreener.cs" />
     <Compile Include="IStockScreener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

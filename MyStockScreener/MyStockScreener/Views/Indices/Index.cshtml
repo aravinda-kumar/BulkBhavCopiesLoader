@@ -1,0 +1,25 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <h2>Housebreak by NSE Indices</h2>
+    
+    <table class="table">
+        <th>
+            Index
+        </th>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Details", "Details", new { Id = item }) |
+            </td>
+        </tr>
+        }
+    </table>

@@ -197,6 +197,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndexHousebreaksController.cs" />
+    <Compile Include="Controllers\IndicesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -269,6 +271,9 @@
     <Content Include="Views\Home\DisplayQuotes.cshtml" />
     <Content Include="Views\Home\GenerateHousebreakReport.cshtml" />
     <Content Include="Views\Home\QuickHousebreakReport.cshtml" />
+    <Content Include="Views\Indices\Index.cshtml" />
+    <Content Include="Views\IndexHousebreaks\Details.cshtml" />
+    <Content Include="Views\Indices\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

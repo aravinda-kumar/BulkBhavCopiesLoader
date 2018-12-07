@@ -46,6 +46,272 @@ warning 6002: The table/view 'BhavCopiesDb.dbo.BhavCopyUploadLog' does not have 
           <Property Name="NumberOfCandles" Type="int" Nullable="false" />
           <Property Name="FK_Ticker_Id" Type="bigint" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BhavCopiesDb.dbo.ind_close_all_04122018' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ind_close_all_04122018">
+          <Property Name="Index Name" Type="varchar" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_50' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ind_Nifty_50">
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="100" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Auto' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ind_Nifty_Auto">
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Bank' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ind_Nifty_Bank">
+          <Property Name="Company Name" Type="varchar" MaxLength="50" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Finance' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ind_Nifty_Finance">
+          <Property Name="Company Name" Type="varchar" MaxLength="50" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Fmcg' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ind_Nifty_Fmcg">
+          <Property Name="Company Name" Type="varchar" MaxLength="50" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_IT' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ind_Nifty_IT">
+          <Property Name="Company Name" Type="varchar" MaxLength="50" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Media' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ind_Nifty_Media">
+          <Property Name="Company Name" Type="varchar" MaxLength="50" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Metal' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ind_Nifty_Metal">
+          <Property Name="Company Name" Type="varchar" MaxLength="50" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Next_50' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ind_Nifty_Next_50">
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Pharma' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ind_Nifty_Pharma">
+          <Property Name="Company Name" Type="varchar" MaxLength="50" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Private_Bank' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ind_Nifty_Private_Bank">
+          <Property Name="Company Name" Type="varchar" MaxLength="50" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_PSU_Bank' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ind_Nifty_PSU_Bank">
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BhavCopiesDb.dbo.ind_Nifty_Realty' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ind_Nifty_Realty">
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <EntityType Name="Nifty_50">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="100" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Nifty_Auto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Nifty_Bank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Nifty_Finance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Nifty_Fmcg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Nifty_IT">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Nifty_Media">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Nifty_Metal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Nifty_Next_50">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Nifty_Pharma">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Nifty_Private_Bank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Nifty_PSU_Bank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Nifty_Realty">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company Name" Type="varchar" MaxLength="100" />
+          <Property Name="Industry" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Series" Type="varchar" MaxLength="50" />
+          <Property Name="ISIN Code" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Tickers">
           <Key>
             <PropertyRef Name="Id" />
@@ -69,6 +335,19 @@ warning 6002: The table/view 'BhavCopiesDb.dbo.BhavCopyUploadLog' does not have 
         <EntityContainer Name="BhavCopiesDbModelStoreContainer">
           <EntitySet Name="BhavCopies" EntityType="Self.BhavCopies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Housebreaks" EntityType="Self.Housebreaks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nifty_50" EntityType="Self.Nifty_50" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nifty_Auto" EntityType="Self.Nifty_Auto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nifty_Bank" EntityType="Self.Nifty_Bank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nifty_Finance" EntityType="Self.Nifty_Finance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nifty_Fmcg" EntityType="Self.Nifty_Fmcg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nifty_IT" EntityType="Self.Nifty_IT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nifty_Media" EntityType="Self.Nifty_Media" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nifty_Metal" EntityType="Self.Nifty_Metal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nifty_Next_50" EntityType="Self.Nifty_Next_50" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nifty_Pharma" EntityType="Self.Nifty_Pharma" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nifty_Private_Bank" EntityType="Self.Nifty_Private_Bank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nifty_PSU_Bank" EntityType="Self.Nifty_PSU_Bank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nifty_Realty" EntityType="Self.Nifty_Realty" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tickers" EntityType="Self.Tickers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BhavCopyUploadLog" EntityType="Self.BhavCopyUploadLog" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -121,6 +400,19 @@ warning 6002: The table/view 'BhavCopiesDb.dbo.BhavCopyUploadLog' does not have 
             <End Role="Ticker" EntitySet="Tickers" />
             <End Role="Housebreak" EntitySet="Housebreaks" />
           </AssociationSet>
+          <EntitySet Name="Nifty_50" EntityType="BhavCopiesDbModel.Nifty_50" />
+          <EntitySet Name="Nifty_Auto" EntityType="BhavCopiesDbModel.Nifty_Auto" />
+          <EntitySet Name="Nifty_Bank" EntityType="BhavCopiesDbModel.Nifty_Bank" />
+          <EntitySet Name="Nifty_Finance" EntityType="BhavCopiesDbModel.Nifty_Finance" />
+          <EntitySet Name="Nifty_Fmcg" EntityType="BhavCopiesDbModel.Nifty_Fmcg" />
+          <EntitySet Name="Nifty_IT" EntityType="BhavCopiesDbModel.Nifty_IT" />
+          <EntitySet Name="Nifty_Media" EntityType="BhavCopiesDbModel.Nifty_Media" />
+          <EntitySet Name="Nifty_Metal" EntityType="BhavCopiesDbModel.Nifty_Metal" />
+          <EntitySet Name="Nifty_Next_50" EntityType="BhavCopiesDbModel.Nifty_Next_50" />
+          <EntitySet Name="Nifty_Pharma" EntityType="BhavCopiesDbModel.Nifty_Pharma" />
+          <EntitySet Name="Nifty_Private_Bank" EntityType="BhavCopiesDbModel.Nifty_Private_Bank" />
+          <EntitySet Name="Nifty_PSU_Bank" EntityType="BhavCopiesDbModel.Nifty_PSU_Bank" />
+          <EntitySet Name="Nifty_Realty" EntityType="BhavCopiesDbModel.Nifty_Realty" />
         </EntityContainer>
         <EntityType Name="Housebreak">
           <Key>
@@ -158,6 +450,149 @@ warning 6002: The table/view 'BhavCopiesDb.dbo.BhavCopyUploadLog' does not have 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Nifty_50">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISIN_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nifty_Auto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISIN_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nifty_Bank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISIN_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nifty_Finance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISIN_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nifty_Fmcg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISIN_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nifty_IT">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISIN_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nifty_Media">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISIN_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nifty_Metal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISIN_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nifty_Next_50">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISIN_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nifty_Pharma">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISIN_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nifty_Private_Bank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISIN_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nifty_PSU_Bank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISIN_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nifty_Realty">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISIN_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -208,6 +643,162 @@ warning 6002: The table/view 'BhavCopiesDb.dbo.BhavCopyUploadLog' does not have 
               <MappingFragment StoreEntitySet="Tickers">
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Ticker1" ColumnName="Ticker" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nifty_50">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Nifty_50">
+              <MappingFragment StoreEntitySet="Nifty_50">
+                <ScalarProperty Name="ISIN_Code" ColumnName="ISIN Code" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nifty_Auto">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Nifty_Auto">
+              <MappingFragment StoreEntitySet="Nifty_Auto">
+                <ScalarProperty Name="ISIN_Code" ColumnName="ISIN Code" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nifty_Bank">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Nifty_Bank">
+              <MappingFragment StoreEntitySet="Nifty_Bank">
+                <ScalarProperty Name="ISIN_Code" ColumnName="ISIN Code" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nifty_Finance">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Nifty_Finance">
+              <MappingFragment StoreEntitySet="Nifty_Finance">
+                <ScalarProperty Name="ISIN_Code" ColumnName="ISIN Code" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nifty_Fmcg">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Nifty_Fmcg">
+              <MappingFragment StoreEntitySet="Nifty_Fmcg">
+                <ScalarProperty Name="ISIN_Code" ColumnName="ISIN Code" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nifty_IT">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Nifty_IT">
+              <MappingFragment StoreEntitySet="Nifty_IT">
+                <ScalarProperty Name="ISIN_Code" ColumnName="ISIN Code" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nifty_Media">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Nifty_Media">
+              <MappingFragment StoreEntitySet="Nifty_Media">
+                <ScalarProperty Name="ISIN_Code" ColumnName="ISIN Code" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nifty_Metal">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Nifty_Metal">
+              <MappingFragment StoreEntitySet="Nifty_Metal">
+                <ScalarProperty Name="ISIN_Code" ColumnName="ISIN Code" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nifty_Next_50">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Nifty_Next_50">
+              <MappingFragment StoreEntitySet="Nifty_Next_50">
+                <ScalarProperty Name="ISIN_Code" ColumnName="ISIN Code" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nifty_Pharma">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Nifty_Pharma">
+              <MappingFragment StoreEntitySet="Nifty_Pharma">
+                <ScalarProperty Name="ISIN_Code" ColumnName="ISIN Code" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nifty_Private_Bank">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Nifty_Private_Bank">
+              <MappingFragment StoreEntitySet="Nifty_Private_Bank">
+                <ScalarProperty Name="ISIN_Code" ColumnName="ISIN Code" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nifty_PSU_Bank">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Nifty_PSU_Bank">
+              <MappingFragment StoreEntitySet="Nifty_PSU_Bank">
+                <ScalarProperty Name="ISIN_Code" ColumnName="ISIN Code" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nifty_Realty">
+            <EntityTypeMapping TypeName="BhavCopiesDbModel.Nifty_Realty">
+              <MappingFragment StoreEntitySet="Nifty_Realty">
+                <ScalarProperty Name="ISIN_Code" ColumnName="ISIN Code" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

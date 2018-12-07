@@ -331,5 +331,12 @@ namespace BulkBhavCopiesLoader
             MessageBox.Show("Done");
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            List<string> IndexNames = dbAccessLayer.GetIndexList();
+
+            dbAccessLayer.GetQuickHousebreakReportOfIndex("Nifty_50");
+        }
     }
 }
