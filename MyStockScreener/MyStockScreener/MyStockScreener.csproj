@@ -274,6 +274,7 @@
     <Content Include="Views\Indices\Index.cshtml" />
     <Content Include="Views\IndexHousebreaks\Details.cshtml" />
     <Content Include="Views\Indices\Details.cshtml" />
+    <Content Include="Views\Home\QuickHousebreakAboveAvgVolumeReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

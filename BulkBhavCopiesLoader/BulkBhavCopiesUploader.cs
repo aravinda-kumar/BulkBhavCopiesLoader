@@ -16,6 +16,9 @@ namespace BulkBhavCopiesLoader
     {
         BackgroundWorker bwUploadBhavCopyWorker = new BackgroundWorker();
         BackgroundWorker bwHousebreakPopulator = new BackgroundWorker();
+        BackgroundWorker bwMovingAveragePopulator = new BackgroundWorker();
+        BackgroundWorker bwHousePerformanceUpdator = new BackgroundWorker();
+
         IBhavCopyDBAccessLayer dbAccessLayer = new BhavCopyDBAccessLayer();
         public BulkBhavCopiesUploader()
         {
@@ -26,6 +29,12 @@ namespace BulkBhavCopiesLoader
 
             bwHousebreakPopulator.WorkerReportsProgress = true;
             bwHousebreakPopulator.WorkerSupportsCancellation = true;
+
+            bwMovingAveragePopulator.WorkerReportsProgress = true;
+            bwMovingAveragePopulator.WorkerSupportsCancellation = true;
+
+            bwHousePerformanceUpdator.WorkerReportsProgress = true;
+            bwHousePerformanceUpdator.WorkerSupportsCancellation = true;
         }
 
         private void InitializeBackgroundWorker()
@@ -47,6 +56,24 @@ namespace BulkBhavCopiesLoader
             bwHousebreakPopulator.ProgressChanged +=
                 new ProgressChangedEventHandler(
             bwHousebreakPopulator_ProgressChanged);
+
+            bwMovingAveragePopulator.DoWork +=
+                new DoWorkEventHandler(bwMovingAveragePopulator_DoWork);
+            bwMovingAveragePopulator.RunWorkerCompleted +=
+                new RunWorkerCompletedEventHandler(
+            bwMovingAveragePopulator_RunWorkerCompleted);
+            bwMovingAveragePopulator.ProgressChanged +=
+                new ProgressChangedEventHandler(
+            bwMovingAveragePopulator_ProgressChanged);
+
+            bwHousePerformanceUpdator.DoWork +=
+                new DoWorkEventHandler(bwHousePerformanceUpdator_DoWork);
+            bwHousePerformanceUpdator.RunWorkerCompleted +=
+                new RunWorkerCompletedEventHandler(
+            bwMovingAveragePopulator_RunWorkerCompleted);
+            bwHousePerformanceUpdator.ProgressChanged +=
+                new ProgressChangedEventHandler(
+            bwHousePerformanceUpdator_ProgressChanged);
         }
 
 
@@ -337,6 +364,230 @@ namespace BulkBhavCopiesLoader
             List<string> IndexNames = dbAccessLayer.GetIndexList();
 
             dbAccessLayer.GetQuickHousebreakReportOfIndex("Nifty_50");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            button6.Enabled = false;
+            bwMovingAveragePopulator.RunWorkerAsync();
+        }
+
+
+
+        // This event handler is where the actual,
+        // potentially time-consuming work is done.
+        private void bwMovingAveragePopulator_DoWork(object sender,
+            DoWorkEventArgs e)
+        {
+            // Get the BackgroundWorker that raised this event.
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            List<Ticker> tickers = dbAccessLayer.GetTickerObjects();
+            int tickerCount = 1;
+            foreach (Ticker t in tickers)
+            {
+                stockScreener.PopulateIndicators(t);
+                tickerCount++;
+                int percentage = (100 * tickerCount) / tickers.Count;
+                string progressMessage = "";
+                progressMessage = $"{tickerCount} Bhav Copies of {tickers.Count} in Progress.";
+                worker.ReportProgress(percentage, progressMessage);
+            }
+
+        }
+
+        // This event handler deals with the results of the
+        // background operation.
+        private void bwMovingAveragePopulator_RunWorkerCompleted(
+            object sender, RunWorkerCompletedEventArgs e)
+        {
+            // First, handle the case where an exception was thrown.
+            if (e.Error != null)
+            {
+                MessageBox.Show(e.Error.Message);
+            }
+            else if (e.Cancelled)
+            {
+                // Next, handle the case where the user canceled 
+                // the operation.
+                // Note that due to a race condition in 
+                // the DoWork event handler, the Cancelled
+                // flag may not have been set, even though
+                // CancelAsync was called.
+                resultLabel.Text = "Canceled";
+            }
+            else
+            {
+                // Finally, handle the case where the operation 
+                // succeeded.
+                if (e.Result != null)
+                    resultLabel.Text = "Complete";
+            }
+
+            button6.Enabled = true;
+        }
+
+        // This event handler updates the progress bar.
+        private void bwMovingAveragePopulator_ProgressChanged(object sender,
+            ProgressChangedEventArgs e)
+        {
+            this.progressBar1.Value = e.ProgressPercentage;
+            resultLabel.Text = (string)e.UserState;
+        }
+
+        // This event handler is where the actual,
+        // potentially time-consuming work is done.
+        private void bwHousePerformanceUpdator_DoWork(object sender,
+            DoWorkEventArgs e)
+        {
+            // Get the BackgroundWorker that raised this event.
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            List<Ticker> tickerNamesFromHousebreaks = dbAccessLayer.GetStocksNamesFromHousebreaks();
+            int tickerCount = 1;
+            foreach (Ticker t in tickerNamesFromHousebreaks)
+            {
+                List<BhavCopy> bhavList = dbAccessLayer.GetQuotes(t.Ticker1);
+                List<Housebreak> hbToBeUpdated = new List<Housebreak>();
+                List<Housebreak> housebreaksList = dbAccessLayer.GetUnprocessedHousebreaksOfTicker(t.Id);
+                foreach (Housebreak hb in housebreaksList)
+                {
+                    int index = bhavList.FindIndex(bc => bc.Date == hb.BreakoutCandleDate);
+                    double Stoploss = 0;
+                    double percentageMove = 0;
+                    double bullishDiff = 0;
+                    double bearishDiff = 0;
+                    string breakoutType = "";
+                    double entryPrice = bhavList[index].C;
+
+
+                    if (bhavList[index].C > hb.MotherCandleHigh)
+                    {
+                        // bullish
+                        Stoploss = hb.MotherCandleLow;
+                        breakoutType = "Bullish";
+                        double maxPriceAfterEntry = entryPrice;
+                        bool stoplossHit = false;
+                        for (int i = index + 1; i < bhavList.Count; i++)
+                        {
+                            if (bhavList[i].C <= Stoploss)
+                            {
+                                percentageMove = ((maxPriceAfterEntry - entryPrice) * 100) / entryPrice;
+                                hb.StopLossHitDate = bhavList[i].Date;
+                                hb.PercentageMoveAfterBreakOut = percentageMove;
+                                hbToBeUpdated.Add(hb);
+                                stoplossHit = true;
+                            }
+                            else
+                            {
+                                if (bhavList[i].H > maxPriceAfterEntry)
+                                {
+                                    maxPriceAfterEntry = bhavList[i].H;
+                                }
+                            }
+                        }
+                        if (!stoplossHit)
+                        {
+                            percentageMove = ((maxPriceAfterEntry - entryPrice) * 100) / entryPrice;
+                            hb.PercentageMoveAfterBreakOut = percentageMove;
+                            hbToBeUpdated.Add(hb);
+                        }
+                    }
+                    else if (bhavList[index].C < hb.MotherCandleLow)
+                    {
+                        // bearish
+                        Stoploss = hb.MotherCandleHigh;
+                        breakoutType = "Bearish";
+                        double maxPriceAfterEntry = entryPrice;
+                        bool stoplossHit = false;
+                        for (int i = index + 1; i < bhavList.Count; i++)
+                        {
+                            if (bhavList[i].C >= Stoploss)
+                            {
+                                percentageMove = ((maxPriceAfterEntry - entryPrice) * 100) / entryPrice;
+                                hb.StopLossHitDate = bhavList[i].Date;
+                                hb.PercentageMoveAfterBreakOut = percentageMove;
+                                hbToBeUpdated.Add(hb);
+                                stoplossHit = true;
+                            }
+                            else
+                            {
+                                if (bhavList[i].L < maxPriceAfterEntry)
+                                {
+                                    maxPriceAfterEntry = bhavList[i].L;
+                                }
+                            }
+                        }
+                        if (!stoplossHit)
+                        {
+                            percentageMove = ((maxPriceAfterEntry - entryPrice) * 100) / entryPrice;
+                            hb.PercentageMoveAfterBreakOut = percentageMove;
+                            hbToBeUpdated.Add(hb);
+                        }
+                    }
+                    
+
+
+                }
+                dbAccessLayer.UpdateHousebreaks(hbToBeUpdated);
+                int percentage = (100 * tickerCount) / tickerNamesFromHousebreaks.Count;
+                string progressMessage = "";
+                progressMessage = $"{tickerCount} Bhav Copies of {tickerNamesFromHousebreaks.Count} in Progress.";
+                worker.ReportProgress(percentage, progressMessage);
+                tickerCount++;
+            }
+
+        }
+
+        // This event handler deals with the results of the
+        // background operation.
+        private void bwHousePerformanceUpdator_RunWorkerCompleted(
+            object sender, RunWorkerCompletedEventArgs e)
+        {
+            // First, handle the case where an exception was thrown.
+            if (e.Error != null)
+            {
+                MessageBox.Show(e.Error.Message);
+            }
+            else if (e.Cancelled)
+            {
+                // Next, handle the case where the user canceled 
+                // the operation.
+                // Note that due to a race condition in 
+                // the DoWork event handler, the Cancelled
+                // flag may not have been set, even though
+                // CancelAsync was called.
+                resultLabel.Text = "Canceled";
+            }
+            else
+            {
+                // Finally, handle the case where the operation 
+                // succeeded.
+                if (e.Result != null)
+                    resultLabel.Text = "Complete";
+            }
+
+            button_housebreakperformance.Enabled = true;
+        }
+
+        // This event handler updates the progress bar.
+        private void bwHousePerformanceUpdator_ProgressChanged(object sender,
+            ProgressChangedEventArgs e)
+        {
+            this.progressBar1.Value = e.ProgressPercentage;
+            resultLabel.Text = (string)e.UserState;
+        }
+
+        private void button_CandleScan_Click(object sender, EventArgs e)
+        {
+            List<BhavCopy> bhavCopies = dbAccessLayer.GetQuotes("AUROPHARMA");
+            stockScreener.ScanForCandleStickPatterns(bhavCopies);
+        }
+
+        private void button_housebreakperformance_Click(object sender, EventArgs e)
+        {
+            button_housebreakperformance.Enabled = false;
+            bwHousePerformanceUpdator.RunWorkerAsync();
         }
     }
 }

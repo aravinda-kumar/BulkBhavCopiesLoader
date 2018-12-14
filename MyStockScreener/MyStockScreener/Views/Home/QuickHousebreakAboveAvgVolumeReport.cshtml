@@ -1,0 +1,88 @@
+﻿@model IEnumerable<StockScreenerLibrary.ViewModels.HousebreakAboveAvgVolume>
+@{
+    ViewBag.Title = "QuickHousebreakAboveAvgVolumeReport";
+}
+
+<h2>Housebreak Report based on Average Volumes</h2>
+
+@foreach (var item in Model)
+{
+    <h2>
+        Housebreak Report of @Html.DisplayFor(modelItem => item.BreakoutCandleDate)
+    </h2>
+    break;
+}
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ticker)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfCandles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Breakout_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.avgVolume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Volume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PercentageVolume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherCandleHigh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherCandleLow)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherCandleDate)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ticker)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfCandles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Breakout_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.avgVolume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Volume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PercentageVolume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherCandleHigh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherCandleLow)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherCandleDate)
+        </td>
+
+
+    </tr>
+    }
+
+</table>
+
+

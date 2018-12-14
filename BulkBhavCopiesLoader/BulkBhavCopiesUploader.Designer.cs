@@ -41,6 +41,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button_CandleScan = new System.Windows.Forms.Button();
+            this.button_housebreakperformance = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,11 +175,44 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(12, 281);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(233, 23);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "Populate Volume Moving Average";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button_CandleScan
+            // 
+            this.button_CandleScan.Location = new System.Drawing.Point(270, 281);
+            this.button_CandleScan.Name = "button_CandleScan";
+            this.button_CandleScan.Size = new System.Drawing.Size(233, 23);
+            this.button_CandleScan.TabIndex = 13;
+            this.button_CandleScan.Text = "Scan For Candle Patterns";
+            this.button_CandleScan.UseVisualStyleBackColor = true;
+            this.button_CandleScan.Click += new System.EventHandler(this.button_CandleScan_Click);
+            // 
+            // button_housebreakperformance
+            // 
+            this.button_housebreakperformance.Location = new System.Drawing.Point(12, 331);
+            this.button_housebreakperformance.Name = "button_housebreakperformance";
+            this.button_housebreakperformance.Size = new System.Drawing.Size(233, 23);
+            this.button_housebreakperformance.TabIndex = 14;
+            this.button_housebreakperformance.Text = "Housebreak Performance";
+            this.button_housebreakperformance.UseVisualStyleBackColor = true;
+            this.button_housebreakperformance.Click += new System.EventHandler(this.button_housebreakperformance_Click);
+            // 
             // BulkBhavCopiesUploader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 265);
+            this.ClientSize = new System.Drawing.Size(687, 459);
+            this.Controls.Add(this.button_housebreakperformance);
+            this.Controls.Add(this.button_CandleScan);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -206,6 +242,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button_CandleScan;
+        private System.Windows.Forms.Button button_housebreakperformance;
     }
 }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Data.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using StockScreenerLibrary.ViewModels;
 
 namespace StockScreenerLibrary
 {
@@ -143,7 +143,92 @@ namespace StockScreenerLibrary
 
             }
         }
+         
+        public List<HousebreakAboveAvgVolume> GetQuickHousebreakAbvAvgVolume(DateTime breakOutDate)
+        {
+            using (var bhavDBContext = new BhavCopiesDbEntities())
+            {
 
+                var housbreaksSortedByDate = (from hb in bhavDBContext.Housebreaks
+                                              orderby hb.BreakoutCandleDate descending
+                                              select hb).FirstOrDefault();
+                // Eager Loading
+                //var houseBreakList = bhavDBContext.Housebreaks
+                //    .Include("Ticker")
+                //    .Where(hb => hb.BreakoutCandleDate == housbreaksSortedByDate.BreakoutCandleDate)
+                //    .OrderByDescending(hb => hb.NumberOfCandles)
+                //    .ToList();
+
+
+                //var hbAbvAvgVolumes = from hb in houseBreakList
+                //                      join ind in bhavDBContext.Indicators on hb.BreakoutCandleDate equals ind.Date
+                //                      join bc in bhavDBContext.BhavCopies on hb.BreakoutCandleDate equals bc.Date
+                //                      where (hb.FK_Ticker_Id == ind.FK_Ticker_Id) && (hb.BreakoutCandleDate == ind.Date) && (bc.Date == ind.Date)
+                //                      select new
+                //                      {
+                //                          bc.Ticker,
+                //                          bc.Volume,
+                //                          ind.Indicator_1,
+                //                          hb.MotherCandleHigh,
+                //                          hb.MotherCandleLow,
+                //                          hb.MotherCandleDate,
+                //                          hb.BreakoutCandleDate
+                //                      };
+
+                var hbAbvAvgVolumes = from bc in bhavDBContext.BhavCopies
+                                  join t in bhavDBContext.Tickers on bc.Ticker equals t.Ticker1
+                                  join hb in bhavDBContext.Housebreaks on bc.Date equals hb.BreakoutCandleDate
+                                  join ind in bhavDBContext.Indicators on t.Id equals ind.FK_Ticker_Id
+                                  where bc.Date == housbreaksSortedByDate.BreakoutCandleDate && t.Id == hb.FK_Ticker_Id && bc.Date == ind.Date && bc.Volume > ind.Indicator_1
+                                  select new
+                                  {
+                                      bc.Ticker,
+                                      bc.Volume,
+                                      bc.C,
+                                      ind.Indicator_1,
+                                      hb.MotherCandleHigh,
+                                      hb.MotherCandleLow,
+                                      hb.MotherCandleDate,
+                                      hb.BreakoutCandleDate,
+                                      hb.NumberOfCandles
+                                  };
+
+
+                List < HousebreakAboveAvgVolume > hbAboveAvgVolumes = new List<HousebreakAboveAvgVolume>();
+                foreach(var item in hbAbvAvgVolumes)
+                {
+                    HousebreakAboveAvgVolume hbObject = new HousebreakAboveAvgVolume();
+
+                    hbObject.Ticker = item.Ticker;
+                    hbObject.Volume = item.Volume;
+                    hbObject.avgVolume = item.Indicator_1;
+                    hbObject.MotherCandleHigh = item.MotherCandleHigh;
+                    hbObject.MotherCandleLow = item.MotherCandleLow;
+                    hbObject.MotherCandleDate = item.MotherCandleDate;
+                    hbObject.BreakoutCandleDate = item.BreakoutCandleDate;
+                    hbObject.NumberOfCandles = item.NumberOfCandles;
+                    hbObject.PercentageVolume = (100 * item.Volume) / hbObject.avgVolume;
+                    hbObject.ClosingPrice = item.C;
+                    if (item.C > item.MotherCandleHigh)
+                        hbObject.Breakout_Type = "Bullish";
+                    else
+                        hbObject.Breakout_Type = "Bearish";
+                    hbAboveAvgVolumes.Add(hbObject);
+                }
+
+                // Below code is a lazy loading and navigation property Ticker will not be loaded unless it is queried
+                // It will generate an exception in view if not loaded. So this code is converted to eager loading
+                // as above
+
+                                      //var bhavCopyfromDB = (from s in bhavDBContext.Housebreaks
+                                      //                      orderby s.NumberOfCandles descending
+                                      //                      where s.BreakoutCandleDate == breakOutDate
+                                      //                      select s).ToList();
+
+
+                return hbAboveAvgVolumes.OrderByDescending(hb => hb.NumberOfCandles).ToList();
+            }
+        }
         public List<Housebreak> GetQuickHousebreakReport(DateTime breakOutDate)
         {
             using (var bhavDBContext = new BhavCopiesDbEntities())
@@ -166,10 +251,10 @@ namespace StockScreenerLibrary
                 // It will generate an exception in view if not loaded. So this code is converted to eager loading
                 // as above
 
-                //var bhavCopyfromDB = (from s in bhavDBContext.Housebreaks
-                //                      orderby s.NumberOfCandles descending
-                //                      where s.BreakoutCandleDate == breakOutDate
-                //                      select s).ToList();
+                                                             //var bhavCopyfromDB = (from s in bhavDBContext.Housebreaks
+                                                             //                      orderby s.NumberOfCandles descending
+                                                             //                      where s.BreakoutCandleDate == breakOutDate
+                                                             //                      select s).ToList();
 
 
                 return houseBreakList;
@@ -329,6 +414,68 @@ namespace StockScreenerLibrary
                     closingPricesList.Add(item.C);
                 }
                 return closingPricesList;
+            }
+        }
+
+        public void UpdateIndicator(string Indicator, List<Indicator> IndicatorValues)
+        {
+            using (var bhavDBContext = new BhavCopiesDbEntities())
+            {
+                if (Indicator == "MAVolume")
+                {
+                    foreach(Indicator i in IndicatorValues)
+                    {
+                        long ticker_Id = i.FK_Ticker_Id;
+                        DateTime t = i.Date;
+
+                        var indValueRow = (from indRow in bhavDBContext.Indicators
+                                           where indRow.FK_Ticker_Id == ticker_Id && indRow.Date == t
+                                           select indRow)?.First();
+                        indValueRow.Indicator_1 = i.Indicator_1;
+
+                    }
+                    bhavDBContext.SaveChanges();
+                }
+            }
+        }
+
+        public List<Ticker> GetStocksNamesFromHousebreaks()
+        {
+            //Get Distinct Tickers from house breaks table
+            //select Distinct(t.[Ticker])
+            //from Housebreaks as hb
+            //INNER JOIN Tickers as t ON hb.[FK_Ticker_Id] = t.[Id]
+            //order by t.[Ticker]
+            using (var bhavDBContext = new BhavCopiesDbEntities())
+            {
+                var stockNamesFromHousebreaks = (from t in bhavDBContext.Tickers
+                                                 join hb in bhavDBContext.Housebreaks on t.Id equals hb.FK_Ticker_Id
+                                                 select t).Distinct().ToList();
+                return stockNamesFromHousebreaks;
+            }
+        }
+
+        public List<Housebreak> GetUnprocessedHousebreaksOfTicker(long ticker_id)
+        {
+            //select*
+            //from Housebreaks as hb
+            //where hb.[FK_Ticker_Id] = 256
+            using (var bhavDBContext = new BhavCopiesDbEntities())
+            {
+                var hbOfStock = (from hb in bhavDBContext.Housebreaks
+                                 where hb.FK_Ticker_Id == ticker_id && hb.PercentageMoveAfterBreakOut == null
+                                 orderby hb.BreakoutCandleDate ascending
+                                 select hb).ToList();
+                return hbOfStock;
+            }
+        }
+
+        public void UpdateHousebreaks(List<Housebreak> housebreakList)
+        {
+            using (var bhavDBContext = new BhavCopiesDbEntities())
+            {
+                bhavDBContext.Housebreaks.AddRange(housebreakList);
+                bhavDBContext.SaveChanges();
             }
         }
     }

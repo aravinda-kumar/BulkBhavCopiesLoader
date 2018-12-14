@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StockScreenerLibrary.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,5 +26,13 @@ namespace StockScreenerLibrary
         List<Housebreak> GetQuickHousebreakReportOfIndex(string indexName);
 
         List<double> GetClosingPrices(string Ticker);
+
+        void UpdateIndicator(string Indicator, List<Indicator> IndicatorValues);
+        List<HousebreakAboveAvgVolume> GetQuickHousebreakAbvAvgVolume(DateTime breakOutDate);
+
+        List<Ticker> GetStocksNamesFromHousebreaks();
+
+        List<Housebreak> GetUnprocessedHousebreaksOfTicker(long ticker_id);
+        void UpdateHousebreaks(List<Housebreak> housebreakList);
     }
 }

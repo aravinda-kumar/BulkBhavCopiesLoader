@@ -1,4 +1,5 @@
 ﻿using StockScreenerLibrary;
+using StockScreenerLibrary.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,6 +59,12 @@ namespace MyStockScreener.Controllers
         public ActionResult QuickHousebreakReport()
         {
             List<Housebreak> housebreakReport = dbAccessLayer.GetQuickHousebreakReport(new DateTime(2018,12,4));
+            return View(housebreakReport);
+        }
+
+        public ActionResult QuickHousebreakAboveAvgVolumeReport()
+        {
+            List<HousebreakAboveAvgVolume> housebreakReport = dbAccessLayer.GetQuickHousebreakAbvAvgVolume(new DateTime(2018, 12, 4));
             return View(housebreakReport);
         }
     }

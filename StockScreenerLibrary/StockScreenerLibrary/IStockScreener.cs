@@ -11,7 +11,9 @@ namespace StockScreenerLibrary
         List<HousebreakInfo> GenerateHousebreakInfo(List<BhavCopy> BhavCopies);
         List<HouseBreakReport> GenerateHousebreakReport(DateTime givenDate);
 
-        void PopulateIndicators();
+        void PopulateIndicators(Ticker ticker);
+
+        void ScanForCandleStickPatterns(List<BhavCopy> bhavCopies);
 
     }
 }
